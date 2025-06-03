@@ -16,7 +16,7 @@ app.use(helmet());
 
 const mongoose =require("mongoose");
 
-const mongoDB="mongodb://root:7c2sx2p2@dbconn.sealosbja.site:47513/?directConnection=true";
+const mongoDB=process.env.MONGODB_URI||"mongodb://root:7c2sx2p2@dbconn.sealosbja.site:35198/?directConnection=true";
 mongoose.connect(mongoDB,{useNewUrlParser:true,useUnifiedTopology:true});
 mongoose.Promise=global.Promise;
 const db = mongoose.connection;
